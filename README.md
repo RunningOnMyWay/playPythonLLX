@@ -5,7 +5,7 @@ just for learning
 
 # need lib 
 ## 1. numpy
-    ### 1.1 获取从文件中逐行获取数据
+     1.1 获取从文件中逐行获取数据
         示例
             from numpy import *
             group,labels = creatematrixdata("sampledatas/dataForKNN.txt",3)
