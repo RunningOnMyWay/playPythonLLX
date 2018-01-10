@@ -8,6 +8,8 @@ just for learning
      1.1 获取从文件中逐行获取数据
         示例
             from numpy import *
+            from  sampledatas.gradedata import creatematrixdata
+
             group,labels = creatematrixdata("sampledatas/dataForKNN.txt",3)
             print(group[0:10],labels[0:10])
          打印结果：
