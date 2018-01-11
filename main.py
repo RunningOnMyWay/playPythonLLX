@@ -94,9 +94,10 @@ from matplotlib import pyplot
 
 group,labels = creatematrixdata("sampledatas/dataForKNN.txt",3)
 print(group[0:10],labels[0:10])
+zhfont = matplotlib.font_manager.FontProperties(fname='/usr/share/fonts/truetype/wqy/wqy-microhei.ttc')
 fig = pyplot.figure()
-pyplot.xlabel(u'TestX')
-pyplot.ylabel(u'TestY')
+pyplot.xlabel(u'Test横轴X',fontproperties=zhfont)
+pyplot.ylabel(u'Test纵轴Y',fontproperties=zhfont)
 ax = pyplot.subplot(111)
-ax.scatter(group[:,0],group[:,1])
+ax.scatter(group[:,1],group[:,2],15.0*array(labels),15.0*array(labels))
 pyplot.show()
