@@ -5,7 +5,18 @@ just for learning
 
 # need lib 
 ## 1. numpy
-     1.1 获取从文件中逐行获取数据
+
+## 2. BeautifulSoup
+
+## 3. urlopen
+
+## 4. matplotlib
+
+## 5. python3-tk
+    sudo apt-get install python3-tk
+
+# 示例说明
+1.1 获取从文件中逐行获取数据
         示例
             from numpy import *
             from  sampledatas.gradedata import creatematrixdata
@@ -24,12 +35,17 @@ just for learning
              [  6.74970000e+04   8.63157700e+00   7.49278000e-01]
              [  3.54830000e+04   1.22731690e+01   1.50805300e+00]] [3, 2, 1, 1, 1, 1, 3, 3, 1, 3]
 
-## 2. BeautifulSoup
-
-## 3. urlopen
-
-## 4. matplotlib
-
-## 5. python3-tk
-    sudo apt-get install python3-tk
-
+1.2 使用matplotlib根据文件中的数据,选择其中的两列作为横纵坐标，画出散列图
+        示例
+            from numpy import *
+            from  sampledatas.gradedata import creatematrixdata
+            import matplotlib
+            from matplotlib import pyplot
+            group,labels = creatematrixdata("sampledatas/dataForKNN.txt",3)
+            print(group[0:10],labels[0:10])
+            fig = pyplot.figure()
+            pyplot.xlabel(u'TestX')
+            pyplot.ylabel(u'TestY')
+            ax = pyplot.subplot(111)
+            ax.scatter(group[:,1],group[:,2])
+            pyplot.show()
