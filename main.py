@@ -6,27 +6,41 @@
 # @File    : main.py
 # @Software: PyCharm Community Edition
 
+#8 12306 查询车票数据
+from urllib.request import urlopen
+import json
+res = urlopen("https://kyfw.12306.cn/otn/leftTicket/queryZ?leftTicketDTO.train_date=2018-02-10&leftTicketDTO.from_station=BJP&leftTicketDTO.to_station=NFF&purpose_codes=ADULT")
+print(res.read().decode('utf-8','ignore'))
+print(res.read())
+data = json.dumps(res.read().decode('utf-8','ignore'))
+print(data)
+# print(data['data'])
+
+
+
+
 # 7 将图像转化为二维向量，并转换红蓝像素
 
-import matplotlib.pyplot as plt # plt 用于显示图片
-import matplotlib.image as mpimg # mpimg 用于读取图片
-import numpy as np
-import os
-
-
-# 无法使用相对路径，因此使用绝对的文件路径
-lena = mpimg.imread(os.path.dirname(os.path.realpath(__file__))+'/sampledatas/america.png') # 读取和代码处于同一目录下的 lena.png
-# 此时 lena 就已经是一个 np.array 了，可以对它进行任意处理
-lena.shape #(512, 512, 3)
-
-plt.imshow(lena) # 显示图片
-# plt.axis('off') # 不显示坐标轴
+# import matplotlib.pyplot as plt # plt 用于显示图片
+# import matplotlib.image as mpimg # mpimg 用于读取图片
+# import numpy as np
+# import os
+#
+#
+# # 无法使用相对路径，因此使用绝对的文件路径
+# lena = mpimg.imread(os.path.dirname(os.path.realpath(__file__))+'/sampledatas/america.png') # 读取和代码处于同一目录下的 lena.png
+# # 此时 lena 就已经是一个 np.array 了，可以对它进行任意处理
+#
+# lena.shape #(512, 512, 3)
+#
+# plt.imshow(lena) # 显示图片
+# # plt.axis('off') # 不显示坐标轴
+# # plt.show()
+#
+# lena_1 = lena[:,:,1]
+# print(lena_1[0:12])
+# plt.imshow(lena_1)
 # plt.show()
-
-lena_1 = lena[:,:,2]
-print(lena_1[0:12])
-plt.imshow(lena_1)
-plt.show()
 
 
 # from urllib.request import urlopen
