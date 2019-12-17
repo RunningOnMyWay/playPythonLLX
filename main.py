@@ -10,9 +10,11 @@
 # html = urlopen("http://www.zysj.com.cn/lilunshuji/index.html")
 # bsObj = BeautifulSoup(html,"html.parser")
 # 9 循环获取地址中的部分数据
-from urllib.request import urlopen
+from urllib2 import urlopen
+
 from bs4 import BeautifulSoup
-url = "https://m.wendangxiazai.com/b-135b612b2af90242a895e559.html";
+
+url = "https://m.wendangxiazai.com/b-86554cc44028915f804dc273.html";
 for i in range(1,13):
     html = urlopen(url)
     bsObj = BeautifulSoup(html,"html.parser",from_encoding='utf-8')
@@ -36,11 +38,6 @@ for i in range(1,13):
 
 # 7 将图像转化为二维向量，并转换红蓝像素
 
-import matplotlib.pyplot as plt # plt 用于显示图片
-import matplotlib.image as mpimg # mpimg 用于读取图片
-import numpy as np
-import os
-
 
 # 无法使用相对路径，因此使用绝对的文件路径
 # lena = mpimg.imread(os.path.dirname(os.path.realpath(__file__))+'/sampledatas/america.png') # 读取和代码处于同一目录下的 lena.png
@@ -56,13 +53,6 @@ import os
 # print(lena_1[0:12])
 # plt.imshow(lena_1)
 # plt.show()
-
-
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
-import re
-
-
 
 
 # 1获取地址中h2标签中id属性包含“virtualenv”的所有h2的html内容/文本内容/属性id值
