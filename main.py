@@ -2,9 +2,24 @@
 # -*- coding: utf-8 -*-
 # @Time    : 17-12-20 上午10:32
 # @Author  : lilixiang
-# @Site    : 
+# @Site    :
 # @File    : main.py
 # @Software: PyCharm Community Edition
+
+# html = urlopen("http://blog.csdn.net/hy245120020/article/details/50776197")
+# html = urlopen("http://www.zysj.com.cn/lilunshuji/index.html")
+# bsObj = BeautifulSoup(html,"html.parser")
+# 9 循环获取地址中的部分数据
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+url = "https://m.wendangxiazai.com/b-135b612b2af90242a895e559.html";
+for i in range(1,13):
+    html = urlopen(url)
+    bsObj = BeautifulSoup(html,"html.parser",from_encoding='utf-8')
+    pcontent = bsObj.findAll("div",{"class":"content"})
+    print(pcontent)
+    # print(pcontent.get_text())
+    url = "https://m.wendangxiazai.com/b-135b612b2af90242a895e559-"+str(i)+".html"
 
 #8 12306 查询车票数据
 # from urllib.request import urlopen
@@ -47,19 +62,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 
-# html = urlopen("http://blog.csdn.net/hy245120020/article/details/50776197")
-# html = urlopen("http://www.zysj.com.cn/lilunshuji/index.html")
-# bsObj = BeautifulSoup(html,"html.parser")
 
-# 7 循环获取地址中的部分数据
-url = "https://m.wendangxiazai.com/b-135b612b2af90242a895e559.html";
-for i in range(1,13):
-    html = urlopen(url)
-    bsObj = BeautifulSoup(html,"html.parser",from_encoding='utf-8')
-    pcontent = bsObj.findAll("div",{"class":"content"})
-    print(pcontent)
-    # print(pcontent.get_text())
-    url = "https://m.wendangxiazai.com/b-135b612b2af90242a895e559-"+str(i)+".html"
 
 
 # 1获取地址中h2标签中id属性包含“virtualenv”的所有h2的html内容/文本内容/属性id值
