@@ -6,6 +6,9 @@
 # @File    : ticTacToe.py
 # @Software: PyCharm Community Edition
 # 九宫格
+
+
+
 jiaozhiban = {'top-L':'*','top-M':'*','top-R':'*','mid-L':'*','mid-M':'*','mid-R':'*','low-L':'*','low-M':'*','low-R':'*'}
 
 def printJiaozhiban(jiaozhiban):
@@ -28,3 +31,4 @@ for i in range(9):
     else:
         print("Turn for player "+player+" move error?")
         i-=1
+

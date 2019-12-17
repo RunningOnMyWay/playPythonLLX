@@ -16,4 +16,4 @@ def M8ball():
     return str(ind)+":"+Messages[ind]
 
 
-# print(M8ball())
+print(M8ball())
